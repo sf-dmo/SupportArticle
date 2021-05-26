@@ -30,9 +30,15 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+obj
+bin
+log
+logs
 
 # Visual Studio 2015/2017 cache/options directory
-.vs/
+.vs
+
+
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
@@ -445,12 +451,3 @@ $RECYCLE.BIN/
 # Log file
 *.dblog
 
-/src/Services/Management/EIG.Portail.Management/EIG.Portail.Management.API/EIG.Portail.Management.API.xml
-db_data
-src/Tools/grafana/data/*
-src/Tools/grafana/logs/*
-src/Tools/prometheus/data/*
-src/Tools/prometheus/logs/*
-/src/Web/PortailEIG/ClientApp/src/app/data/Structure.js
-/src/Web/PortailEIG/ClientApp/src/app/data/Group.js
-/src/Web/PortailEIG/ClientApp/src/app/data/Application.js

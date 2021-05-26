@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCryptoOnly", "NetCryptoOnly.csproj", "{4CC22242-1363-49EB-8DF8-0F3A40296BC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Code", "Code\Code.csproj", "{A8B721C3-46DD-4714-9C13-7C084C99E686}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CC22242-1363-49EB-8DF8-0F3A40296BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC22242-1363-49EB-8DF8-0F3A40296BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC22242-1363-49EB-8DF8-0F3A40296BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC22242-1363-49EB-8DF8-0F3A40296BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B721C3-46DD-4714-9C13-7C084C99E686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B721C3-46DD-4714-9C13-7C084C99E686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B721C3-46DD-4714-9C13-7C084C99E686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B721C3-46DD-4714-9C13-7C084C99E686}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89F2E201-E81F-48CB-8CBC-B7F6A69B6BDE}
+	EndGlobalSection
+EndGlobal

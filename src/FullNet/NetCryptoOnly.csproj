@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Code\**" />
+    <EmbeddedResource Remove="Code\**" />
+    <None Remove="Code\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Code\Code.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SimplePlainText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
