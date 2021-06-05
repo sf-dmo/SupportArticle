@@ -1,8 +1,7 @@
 using Code.Core.KeyStretching;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Text;
-using System.Linq;
 using System.Diagnostics;
+using System.Linq;
 
 namespace TEST
 {
@@ -65,7 +64,7 @@ namespace TEST
             Stopwatch sw = Stopwatch.StartNew();
             byte[] stretchMdp = stretch.Stretching(mdp, ((PBKDF2KeyStretching)stretch).DEFAULT_SALT, iterationCount);
             sw.Stop();
-           
+
             Assert.IsTrue(sw.Elapsed.TotalSeconds > 1d);
         }
     }

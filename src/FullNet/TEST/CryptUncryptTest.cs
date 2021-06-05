@@ -1,11 +1,8 @@
-using Code.Core.KeyStretching;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Text;
-using System.Linq;
-using System.Diagnostics;
 using Code;
-using System.IO;
 using Code.Core;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 
 namespace TEST
@@ -36,7 +33,7 @@ namespace TEST
             string filename = DataPath.SIMPLE_PLAIN_TEXT;
             SecureFile sf = new SecureFile();
             sf.Encrypt(filename, mdp);
-           
+
             FileInfo fiPlain = new FileInfo(filename);
             long mod = fiPlain.Length % 16;
             long plainTextPaddLength = fiPlain.Length + (mod == 0 ? 0 : 16 - mod);
@@ -65,7 +62,7 @@ namespace TEST
             Assert.IsTrue(fiUncipherText.Exists);
 
             Assert.IsTrue(fiPlain.Length == fiUncipherText.Length);
-            Assert.IsTrue(fiPlain.Length < 1 * 1024* 1024);
+            Assert.IsTrue(fiPlain.Length < 1 * 1024 * 1024);
 
             Assert.IsTrue(File.ReadAllBytes(fiPlain.FullName).SequenceEqual(File.ReadAllBytes(fiUncipherText.FullName)));
         }
@@ -83,7 +80,6 @@ namespace TEST
         }
 
         [TestMethod]
-        //[ExpectedException(typeof(CryptographicException))]
         public void Uncrypt_File_Without_Header()
         {
             byte[] mdp = DataPath.Mdp;
@@ -91,7 +87,7 @@ namespace TEST
             SecureFile sf = new SecureFile();
             sf.Decrypt(filename, mdp);
             FileInfo fi = new FileInfo(DataPath.FILE_CRYPT_ONLY_UNCRYPT);
-            Assert.IsTrue(fi.Exists); 
+            Assert.IsTrue(fi.Exists);
             Assert.IsTrue(fi.Length == 0);
         }
 
@@ -116,9 +112,6 @@ namespace TEST
             sf.Encrypt(DataPath.SIMPLE_PLAIN_TEXT, DataPath.Mdp);
 
             sf.Decrypt(DataPath.SIMPLE_PLAIN_TEXT_CRYPT, DataPath.BadMdp);
-            //FileInfo fi = new FileInfo(DataPath.SIMPLE_PLAIN_TEXT_UNCRYPT);
-            //Assert.IsTrue(fi.Exists);
-            //Assert.IsTrue(fi.Length == 0);
         }
     }
 }
