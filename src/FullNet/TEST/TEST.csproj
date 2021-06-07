@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\..\Test\FullNet\FileCryptOnly.crypt" Link="Data\FileCryptOnly.crypt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Test\FullNet\ModifiedKeyOnly.crypt" Link="Data\ModifiedKeyOnly.crypt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Test\FullNet\ModifiedOneChar.txt.crypt" Link="Data\ModifiedOneChar.txt.crypt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
@@ -18,15 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\FileCryptOnly.crypt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\ModifiedKeyOnly.crypt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\ModifiedOneChar.txt.crypt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Data\SimplePlainText.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
