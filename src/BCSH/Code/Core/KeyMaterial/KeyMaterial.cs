@@ -196,26 +196,15 @@ namespace Code.Core
             if (!disposedValue)
             {
                 if (disposing)
-                {
-                    // TODO: dispose managed state (managed objects)
-                   
+                { 
                     Cipher?.Dispose();
                     _KeyCipher?.Dispose();
                     WipeMemory.WipeByte(ref _EncryptedKeyFile);
                 }
 
-                // TODO: free unmanaged resources (unmanaged objects) and override finalizer
-                // TODO: set large fields to null
                 disposedValue = true;
             }
         }
-
-        // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-        // ~KeyMaterial()
-        // {
-        //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-        //     Dispose(disposing: false);
-        // }
 
         public void Dispose()
         {
