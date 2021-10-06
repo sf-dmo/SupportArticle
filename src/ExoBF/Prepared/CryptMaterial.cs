@@ -1,62 +1,32 @@
-﻿using System.Security.Cryptography;
+﻿using System.Collections.ObjectModel;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace ExoBF.Prepared
 {
     public abstract class CryptMaterial
     {
-        protected byte[] _Mdp { get; }
-        protected SymmetricAlgorithm _SymCryptAlog;
+        protected ReadOnlyCollection<byte> Password { get; }
+        protected SymmetricAlgorithm SymCryptAlog { get; set; }
 
-        public CryptMaterial(byte[] password)
+        protected CryptMaterial(byte[] password)
         {
-            _Mdp = MD5.Create().ComputeHash(password);
+            Password = new ReadOnlyCollection<byte>(MD5.HashData(password));
         }
 
-        public CryptMaterial(string password)
+        protected CryptMaterial(string password)
         {
-            _Mdp = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(password));
+            Password = new ReadOnlyCollection<byte>(MD5.HashData(Encoding.UTF8.GetBytes(password)));
         }
 
         public virtual ICryptoTransform GetCrypto()
         {
-            return _SymCryptAlog.CreateEncryptor();
+            return SymCryptAlog.CreateEncryptor();
         }
 
         public virtual ICryptoTransform GetDeCrypto()
         {
-            return _SymCryptAlog.CreateDecryptor();
-        }
-    }
-
-    public class AESCryptMaterial : CryptMaterial
-    {
-        public AESCryptMaterial(byte[] password)
-           : base(password)
-        {
-            _SymCryptAlog = Aes.Create();
-            _SymCryptAlog.Key = _Mdp;
-            _SymCryptAlog.IV = new byte[16];
-            _SymCryptAlog.IV.Initialize();
-        }
-
-        public AESCryptMaterial(string password)
-            : base(password)
-        {
-            _SymCryptAlog = Aes.Create();
-            _SymCryptAlog.Key = _Mdp;
-            _SymCryptAlog.IV = new byte[16];
-            _SymCryptAlog.IV.Initialize();
-        }
-
-        public override ICryptoTransform GetCrypto()
-        {
-            return _SymCryptAlog.CreateEncryptor();
-        }
-
-        public override ICryptoTransform GetDeCrypto()
-        {
-            return _SymCryptAlog.CreateDecryptor();
+            return SymCryptAlog.CreateDecryptor();
         }
     }
 }

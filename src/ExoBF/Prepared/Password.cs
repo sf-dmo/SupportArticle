@@ -1,6 +1,6 @@
 ﻿namespace ExoBF.Prepared
 {
-    public class Password
+    public static class Password
     {
         public const string AESCrypt_MDP = "8éT@";
         public const string DOT_NET_MDP = "\"R0t";

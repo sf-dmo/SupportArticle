@@ -36,7 +36,6 @@ namespace ExoBF.Prepared
             }
         }
 
-
         public void DCrypt(string fullFilename)
         {
             byte[] buf = new byte[4096];
